@@ -4,3 +4,10 @@ google-generativeai
 pinecone-client
 sentence-transformers
 GitPython
+beautifulsoup4
+selenium
+webdriver-manager
+pinterest-api
+tweepy
+instabot
+scrapy
