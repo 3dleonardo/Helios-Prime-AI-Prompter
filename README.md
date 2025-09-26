@@ -56,11 +56,11 @@ cd Helios-Prime-AI-Prompter
 ```bash
 # Build and run the container
 docker build -t helios-comfyui ComfyUI/
-docker run -d -p 8188:8188 -v $(pwd)/custom_nodes:/ComfyUI/custom_nodes -v $(pwd)/prompts:/ComfyUI/prompts --name helios-comfyui helios-comfyui
+docker run -d -p 8189:8189 -v $(pwd)/custom_nodes:/ComfyUI/custom_nodes -v $(pwd)/prompts:/ComfyUI/prompts --name helios-comfyui helios-comfyui
 ```
 
 3. **Open ComfyUI:**
-Navigate to http://localhost:8188
+Navigate to http://localhost:8189
 
 4. **Load workflow:**
 Load `helios_free_workflow.json` and run it
