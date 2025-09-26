@@ -1,0 +1,14 @@
+ComfyUI/
+*.pyc
+__pycache__/
+*.log
+.env
+prompts/*.txt
+n8n/
+miniconda/
+*.exe
+.DS_Store
+node_modules/
+*.tmp
+.cache/
+.vscode/settings.json

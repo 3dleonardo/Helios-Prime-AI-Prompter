@@ -1,0 +1,6 @@
+requests
+pytrends
+google-generativeai
+pinecone-client
+sentence-transformers
+GitPython

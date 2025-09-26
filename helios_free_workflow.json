@@ -1,0 +1,95 @@
+{
+  "last_node_id": 6,
+  "last_link_id": 5,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "HeliosFreeCrawler",
+      "pos": [200, 200],
+      "size": {"0": 300, "1": 200},
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [{"name": "STRING", "type": "STRING", "links": [1], "slot_index": 0}],
+      "properties": {},
+      "widgets_values": ["trends", "sample", "", ""]
+    },
+    {
+      "id": 2,
+      "type": "HeliosTrendAnalyzer",
+      "pos": [600, 200],
+      "size": {"0": 300, "1": 200},
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [{"name": "crawled_data", "type": "STRING", "link": 1}],
+      "outputs": [{"name": "STRING", "type": "STRING", "links": [2], "slot_index": 0}],
+      "properties": {},
+      "widgets_values": []
+    },
+    {
+      "id": 3,
+      "type": "HeliosPromptGenerator",
+      "pos": [1000, 200],
+      "size": {"0": 300, "1": 200},
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [{"name": "trend_data", "type": "STRING", "link": 2}],
+      "outputs": [{"name": "STRING", "type": "STRING", "links": [3], "slot_index": 0}],
+      "properties": {},
+      "widgets_values": ["", "", "ollama", "http://localhost:11434"]
+    },
+    {
+      "id": 4,
+      "type": "HeliosQualityChecker",
+      "pos": [1400, 200],
+      "size": {"0": 300, "1": 200},
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [{"name": "prompts", "type": "STRING", "link": 3}],
+      "outputs": [{"name": "STRING", "type": "STRING", "links": [4], "slot_index": 0}],
+      "properties": {},
+      "widgets_values": []
+    },
+    {
+      "id": 5,
+      "type": "HeliosFileWriter",
+      "pos": [1800, 200],
+      "size": {"0": 300, "1": 200},
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [{"name": "prompts", "type": "STRING", "link": 4}],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": ["2025-09-26.txt"]
+    },
+    {
+      "id": 6,
+      "type": "HeliosKnowledgeBase",
+      "pos": [1800, 400],
+      "size": {"0": 300, "1": 200},
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [{"name": "new_examples", "type": "STRING", "link": 4}],
+      "outputs": [{"name": "STRING", "type": "STRING", "links": null, "slot_index": 0}],
+      "properties": {},
+      "widgets_values": ["datasets-prompt-library.md"]
+    }
+  ],
+  "links": [
+    [1, 1, 0, 2, 0, "STRING"],
+    [2, 2, 0, 3, 0, "STRING"],
+    [3, 3, 0, 4, 0, "STRING"],
+    [4, 4, 0, 5, 0, "STRING"],
+    [4, 4, 0, 6, 0, "STRING"]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
